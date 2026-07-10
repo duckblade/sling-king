@@ -4,9 +4,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1783636837|14013870018';
+const CACHE_VERSION = '1783719360|5768003892';
 /** @type {string} */
-const CACHE_PREFIX = 'platformer-tutor-sw-cache-';
+const CACHE_PREFIX = 'sling-king-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 /** @type {string} */
 const OFFLINE_URL = 'sling-king.offline.html';
