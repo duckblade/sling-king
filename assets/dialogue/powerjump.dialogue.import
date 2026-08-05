@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://t3ak518emi0a"
+path="res://.godot/imported/powerjump.dialogue-0aaea34d938928813bca3fed949793fc.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/powerjump.dialogue"
+dest_files=["res://.godot/imported/powerjump.dialogue-0aaea34d938928813bca3fed949793fc.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://rrl88yijv7ug"]
+
+[ext_resource type="Script" uid="uid://y3ski1a3fy0u" path="res://scripts/walljump.gd" id="1_jjiwg"]
+[ext_resource type="Texture2D" uid="uid://diuf30cijr05g" path="res://assets/sprites/world_tileset_b.png" id="2_4t3fd"]
+[ext_resource type="AudioStream" uid="uid://d203bedwnw86n" path="res://assets/sounds/power_up.wav" id="3_rvtjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpbw8"]
+size = Vector2(14, 5)
+
+[node name="Node2D" type="Area2D" unique_id=604301907]
+collision_mask = 2
+script = ExtResource("1_jjiwg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1886563787]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1431659159]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_dpbw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=572799522]
+texture = ExtResource("2_4t3fd")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171873509]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_dpbw8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1295885964]
+stream = ExtResource("3_rvtjr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

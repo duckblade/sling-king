@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bh3gvaa7gbmmr"]
+
+[ext_resource type="Script" uid="uid://d1cv4t8c8i1eg" path="res://scripts/infijump.gd" id="1_vnr57"]
+[ext_resource type="Texture2D" uid="uid://dytdts1r6lukd" path="res://assets/sprites/fruit.png" id="2_4rr58"]
+[ext_resource type="AudioStream" uid="uid://d203bedwnw86n" path="res://assets/sounds/power_up.wav" id="3_psujt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpbw8"]
+size = Vector2(14, 14)
+
+[node name="Node2D" type="Area2D" unique_id=604301907]
+collision_mask = 2
+script = ExtResource("1_vnr57")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=572799522]
+texture = ExtResource("2_4rr58")
+region_enabled = true
+region_rect = Rect2(34, 17, 11, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171873509]
+shape = SubResource("RectangleShape2D_dpbw8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1295885964]
+stream = ExtResource("3_psujt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

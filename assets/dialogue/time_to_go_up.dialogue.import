@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://t0o6q0svg1d4"
+path="res://.godot/imported/time_to_go_up.dialogue-fd2ff0c9bb3665c5aa6f36be3764340e.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/time_to_go_up.dialogue"
+dest_files=["res://.godot/imported/time_to_go_up.dialogue-fd2ff0c9bb3665c5aa6f36be3764340e.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cvb4tkdhke132"]
+
+[ext_resource type="Texture2D" uid="uid://chnbjhvnt0eu3" path="res://assets/sprites/charasprite.png" id="1_52nqi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpbw8"]
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqmqg"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(72, 0, 12, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5mbl"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(84, 0, 12, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rach5"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(96, 0, 12, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txieb"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(108, 0, 12, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpbw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5mbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rach5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txieb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Curve" id="Curve_52nqi"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.26031747, 360), 0.0, 0.0, 0, 0, Vector2(0.72063494, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_dpbw8"]
+curve = SubResource("Curve_52nqi")
+
+[sub_resource type="Gradient" id="Gradient_xqmqg"]
+offsets = PackedFloat32Array(0, 0.4186851, 0.73702425, 1)
+colors = PackedColorArray(0.94246614, 0.8503923, 0.41371372, 1, 0.7925812, 0.4584239, 0.13280275, 1, 0.65125734, 0.2315268, 0.122898415, 1, 0.54471785, 0.10564994, 4.813075e-08, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_30bd8"]
+gradient = SubResource("Gradient_xqmqg")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ohw3u"]
+
+[sub_resource type="Curve" id="Curve_g5mbl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.22857144, 0.9338842), 0.0, 0.0, 0, 0, Vector2(0.9904762, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8g0lm"]
+curve = SubResource("Curve_g5mbl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rach5"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.59
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+angle_curve = SubResource("CurveTexture_dpbw8")
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_ohw3u")
+gravity = Vector3(0, -100, 0)
+damping_min = 79.32001
+damping_max = 79.32001
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_8g0lm")
+color_ramp = SubResource("GradientTexture1D_30bd8")
+
+[node name="fire" type="Node2D" unique_id=773107171]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=480445084]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552384452]
+shape = SubResource("CircleShape2D_dpbw8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=711565955]
+position = Vector2(1, -2)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_dpbw8")
+autoplay = "default"
+frame_progress = 0.9205867
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=584768826]
+z_index = 2
+position = Vector2(0, -6)
+process_material = SubResource("ParticleProcessMaterial_rach5")

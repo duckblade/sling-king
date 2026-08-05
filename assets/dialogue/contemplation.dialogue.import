@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d30wu4368cy3d"
+path="res://.godot/imported/contemplation.dialogue-a44f63f4afe27039ee233498eea211cb.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/contemplation.dialogue"
+dest_files=["res://.godot/imported/contemplation.dialogue-a44f63f4afe27039ee233498eea211cb.tres"]
+
+[params]
+
+defaults=true

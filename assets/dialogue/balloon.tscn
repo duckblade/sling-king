@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://cpjslngls6tun"]
+
+[ext_resource type="Script" uid="uid://u0841j1ufs2d" path="res://assets/dialogue/balloon.gd" id="1_36de5"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://hck6uw7jj7bu" path="res://assets/sprites/knight_face_a.png" id="2_m4i0f"]
+[ext_resource type="FontFile" uid="uid://b65klmj8f2j1o" path="res://assets/fonts/PixelOperator8.ttf" id="2_ofehm"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://cctbmgubx417i" path="res://assets/sprites/knight_face.png" id="3_lhunj"]
+[ext_resource type="AudioStream" uid="uid://bepmn013yjsub" path="res://assets/sounds/text3.wav" id="5_gp408"]
+[ext_resource type="AudioStream" uid="uid://dcclyqo1o6gj0" path="res://assets/sounds/text1.wav" id="5_nmn4d"]
+[ext_resource type="AudioStream" uid="uid://c880fuhdje2kn" path="res://assets/sounds/text2.wav" id="6_oih1g"]
+[ext_resource type="AudioStream" uid="uid://dvmj6gw3fjlpn" path="res://assets/sounds/tap.wav" id="8_oih1g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+bg_color = Color(0.13725491, 0.47058824, 0.3137255, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+bg_color = Color(0.07102948, 0.28587297, 0.18447462, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+bg_color = Color(0.13725491, 0.47058824, 0.3137255, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmqt"]
+bg_color = Color(0.13630001, 0.47, 0.31427333, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_qq3yp"]
+default_font_size = 30
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 30
+MarginContainer/constants/margin_right = 30
+MarginContainer/constants/margin_top = 15
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhunj"]
+atlas = ExtResource("2_m4i0f")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qadhi"]
+atlas = ExtResource("2_m4i0f")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpbw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhunj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qadhi")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 2.0
+}]
+
+[sub_resource type="Theme" id="Theme_ssvqc"]
+default_font = ExtResource("2_ofehm")
+
+[sub_resource type="Theme" id="Theme_ca42v"]
+default_font = ExtResource("2_ofehm")
+
+[sub_resource type="Animation" id="Animation_nlsx6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qkmqt"]
+resource_name = "progress"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.2, -0.0157438, -4, -0.2, 0.0112069, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.2, 0.00299701, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1337t"]
+_data = {
+&"RESET": SubResource("Animation_nlsx6"),
+&"progress": SubResource("Animation_qkmqt")
+}
+
+[sub_resource type="Theme" id="Theme_rysoc"]
+default_font = ExtResource("2_ofehm")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpbw8"]
+streams_count = 3
+stream_0/stream = ExtResource("5_nmn4d")
+stream_1/stream = ExtResource("6_oih1g")
+stream_2/stream = ExtResource("5_gp408")
+
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
+layer = 100
+script = ExtResource("1_36de5")
+
+[node name="Balloon" type="Control" parent="." unique_id=359403728]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qq3yp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1011109179]
+custom_maximum_size = Vector2(900, -1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -219.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=810051587]
+clip_children = 2
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1428277592]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=138565617]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Portrait2" type="AnimatedSprite2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/BoxContainer" unique_id=1050782180]
+position = Vector2(61, 124)
+scale = Vector2(4.9166665, 5)
+sprite_frames = SubResource("SpriteFrames_dpbw8")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.11659617
+
+[node name="Portrait" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=805373896]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(150, 150)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_lhunj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1624289611]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 20)
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+mouse_filter = 1
+theme = SubResource("Theme_ssvqc")
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1225160028 instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(620, -1)
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ca42v")
+text = "Dialogue..."
+
+[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
+unique_name_in_owner = true
+polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=452325722]
+libraries/ = SubResource("AnimationLibrary_1337t")
+autoplay = &"progress"
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=966297223 node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -107.0
+offset_right = 259.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+alignment = 1
+script = ExtResource("3_72ixx")
+response_template = NodePath("ResponseExample")
+
+[node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+theme = SubResource("Theme_rysoc")
+text = "Response example"
+
+[node name="textSounds" type="AudioStreamPlayer" parent="." unique_id=1116280512]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_dpbw8")
+bus = &"text"
+
+[node name="SoundTimer" type="Timer" parent="." unique_id=1416571872]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1591617516]
+unique_name_in_owner = true
+stream = ExtResource("8_oih1g")
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="timeout" from="SoundTimer" to="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" method="_on_sound_timer_timeout"]

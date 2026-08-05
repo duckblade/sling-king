@@ -1,0 +1,11 @@
+~ start
+You: [[OH NO!|Oh no!|Dang!]] I must have overslept.
+You: Ergo, Wyatt? Anybody there?
+You: Even Jayce... My mates must have gone without me.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => start
+#- End the conversation => END
+=> END

@@ -1,0 +1,6 @@
+~ start
+Reminisce?
+- Yes
+	You: You picked the first one.
+- No => END
+=> END
