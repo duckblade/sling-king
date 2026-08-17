@@ -6,6 +6,9 @@ var player_dying = false
 var has_chkpt:bool=false
 var last_chkpt_pos:Vector2=Vector2.ZERO
 
+func _ready():
+	MusicManager.play_music("exploration")
+
 func add_point():
 	score+=1
 	score_changed.emit(score)

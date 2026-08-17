@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sling-king"
-run/main_scene="uid://de222rtwpdam2"
+run/main_scene="uid://44c2kx0tqvyf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,7 @@ buses/default_bus_layout="uid://b3n4lk4ywjwnx"
 
 GameManager="*uid://dn6oqo080xt0v"
 DialogueManager="*uid://c3rodes2l3gxb"
-Music="*uid://ck1ndr6f6dq8x"
+MusicManager="*uid://ck1ndr6f6dq8x"
 SaveManager="*uid://dln5npnkj3ccd"
 
 [dialogue_manager]
@@ -43,6 +43,16 @@ version_control/autoload_on_startup=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "purple",
+"res://scenes/": "blue",
+"res://scripts/": "teal",
+"res://shaders/": "orange"
+}
 
 [global_group]
 

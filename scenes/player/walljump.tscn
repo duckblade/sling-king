@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rrl88yijv7ug"]
 
-[ext_resource type="Script" uid="uid://y3ski1a3fy0u" path="res://scripts/walljump.gd" id="1_jjiwg"]
+[ext_resource type="Script" uid="uid://y3ski1a3fy0u" path="res://scripts/player/walljump.gd" id="1_jjiwg"]
 [ext_resource type="Texture2D" uid="uid://diuf30cijr05g" path="res://assets/sprites/world_tileset_b.png" id="2_4t3fd"]
 [ext_resource type="AudioStream" uid="uid://d203bedwnw86n" path="res://assets/sounds/power_up.wav" id="3_rvtjr"]
 

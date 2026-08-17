@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://dnqnd2fxb8xfb"]
+
+[ext_resource type="PackedScene" uid="uid://dhfacnb1veyln" path="res://scenes/world/platform.tscn" id="1_1we00"]
+
+[sub_resource type="Animation" id="Animation_kvuet"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(266, -366)]
+}
+
+[sub_resource type="Animation" id="Animation_trtic"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.55, 4.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(209, -366), Vector2(526, -366)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mov21"]
+_data = {
+&"RESET": SubResource("Animation_kvuet"),
+&"new_animation": SubResource("Animation_trtic")
+}
+
+[sub_resource type="Animation" id="Animation_lnu2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("platforms/Platform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -41)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("platforms/Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-62, -60)]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("platforms/Platform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(53, -30), Vector2(-20, -30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("platforms/Platform2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-62, -60), Vector2(17, -60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vatbt"]
+_data = {
+&"RESET": SubResource("Animation_lnu2h"),
+&"new_animation": SubResource("Animation_lbhrr")
+}
+
+[node name="platforms" type="Node2D" unique_id=1029778915]
+z_index = 1
+
+[node name="Platform6" parent="." unique_id=1073765890 instance=ExtResource("1_1we00")]
+position = Vector2(266, -366)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform6" unique_id=483996815]
+libraries/ = SubResource("AnimationLibrary_mov21")
+autoplay = &"new_animation"
+
+[node name="Platform5" parent="." unique_id=1981045007 instance=ExtResource("1_1we00")]
+position = Vector2(-177, -279)
+
+[node name="Platform4" parent="." unique_id=75309484 instance=ExtResource("1_1we00")]
+position = Vector2(-232, -220)
+
+[node name="Platform" parent="." unique_id=967451139 instance=ExtResource("1_1we00")]
+position = Vector2(124, 35)
+
+[node name="Platform2" parent="." unique_id=1274570712 instance=ExtResource("1_1we00")]
+position = Vector2(-62, -60)
+
+[node name="Platform3" parent="." unique_id=1225387757 instance=ExtResource("1_1we00")]
+position = Vector2(7, -41)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform3" unique_id=1050946781]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_vatbt")
+autoplay = &"new_animation"
+
+[node name="Platform8" parent="." unique_id=2011446694 instance=ExtResource("1_1we00")]
+position = Vector2(831, -445)
+
+[node name="Platform7" parent="." unique_id=2087701813 instance=ExtResource("1_1we00")]
+position = Vector2(787, -497)
+
+[node name="Platform9" parent="." unique_id=1351840939 instance=ExtResource("1_1we00")]
+position = Vector2(714, -544)
+
+[node name="Platform10" parent="." unique_id=591435194 instance=ExtResource("1_1we00")]
+position = Vector2(642, -595)

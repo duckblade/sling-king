@@ -41,5 +41,5 @@ func _on_character_body_2d_2_body_entered(body: Node2D) -> void:
 func spawn_coin():
 	var coin = COIN.instantiate()
 	coin.global_position = global_position + Vector2(0,-8)
-	get_tree().current_scene.get_node("coins").add_child(coin)
+	get_tree().current_scene.get_node("items").get_node("coins").add_child(coin)
 	print("coin spawned!")

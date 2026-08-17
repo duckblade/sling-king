@@ -1,0 +1,258 @@
+[gd_scene format=3 uid="uid://olc4sptnpgre"]
+
+[ext_resource type="Texture2D" uid="uid://tywo6wviqn5r" path="res://assets/sprites/bird.png" id="1_ad2ka"]
+[ext_resource type="PackedScene" uid="uid://birk71kmkpqv2" path="res://scenes/sleeping.tscn" id="1_q4yn1"]
+[ext_resource type="PackedScene" uid="uid://dar7ju58t76vt" path="res://scenes/enemy.tscn" id="2_ad2ka"]
+[ext_resource type="Texture2D" uid="uid://q14knt6m7o4w" path="res://assets/sprites/knight.png" id="4_i5e8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2yb1"]
+atlas = ExtResource("1_ad2ka")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js0lu"]
+atlas = ExtResource("1_ad2ka")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxtfn"]
+atlas = ExtResource("1_ad2ka")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
+atlas = ExtResource("1_ad2ka")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
+atlas = ExtResource("1_ad2ka")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5e8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2yb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js0lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxtfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02fa5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_wljb1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-322, -20.000002)]
+}
+
+[sub_resource type="Animation" id="Animation_v2yb1"]
+resource_name = "bird_fly"
+length = 4.5666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-378.99997, -21), Vector2(608, -432)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_010eu"]
+_data = {
+&"RESET": SubResource("Animation_wljb1"),
+&"bird_fly": SubResource("Animation_v2yb1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_010eu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtic"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir15t"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca42v"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysoc"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfngh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trtic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir15t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca42v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rysoc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssvqc"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_264po"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kice"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5newe"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s47"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt5mj"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1j6l"]
+atlas = ExtResource("4_i5e8t")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csyei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssvqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_264po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kice")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5newe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37s47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt5mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1j6l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iv5d7"]
+
+[node name="enemies" type="Node2D" unique_id=274727182]
+
+[node name="bird" type="AnimatedSprite2D" parent="." unique_id=725635451]
+position = Vector2(-322, -20.000002)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_i5e8t")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bird" unique_id=1410122079]
+libraries/ = SubResource("AnimationLibrary_010eu")
+
+[node name="sleeping" parent="." unique_id=1781367448 instance=ExtResource("1_q4yn1")]
+position = Vector2(-429, -939)
+scale = Vector2(0.4, 0.4)
+
+[node name="enemy6" parent="." unique_id=2131646623 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(-127, -853)
+
+[node name="enemy5" parent="." unique_id=453974684 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(0, -853)
+
+[node name="enemy" parent="." unique_id=818761639 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(-30, 91)
+
+[node name="enemy2" parent="." unique_id=77012139 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(-240, -133)
+
+[node name="enemy3" parent="." unique_id=720868684 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(656, -373)
+
+[node name="enemy4" parent="." unique_id=1355048344 instance=ExtResource("2_ad2ka")]
+z_index = 2
+position = Vector2(792, -373)
+
+[node name="companion1" type="Area2D" parent="." unique_id=1489618645]
+position = Vector2(-536, -2911)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="companion1" unique_id=1321792461]
+position = Vector2(-5, -31)
+shape = SubResource("RectangleShape2D_010eu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="companion1" unique_id=1229370446]
+z_index = 1
+position = Vector2(-6, -34)
+sprite_frames = SubResource("SpriteFrames_pfngh")
+autoplay = "default"
+
+[node name="companion2" type="Area2D" parent="." unique_id=1776297922]
+position = Vector2(-505, -2912)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="companion2" unique_id=1287254513]
+z_index = 1
+position = Vector2(7, -32)
+sprite_frames = SubResource("SpriteFrames_csyei")
+autoplay = "default"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="companion2" unique_id=1885616425]
+position = Vector2(7, -27)
+shape = SubResource("RectangleShape2D_010eu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1402777982]
+position = Vector2(-156, -140)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1055231093]
+position = Vector2(1, -1)
+shape = SubResource("SegmentShape2D_iv5d7")

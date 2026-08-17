@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://dknew70xbjqai"]
+
+[ext_resource type="PackedScene" uid="uid://b72ihqmkwc57n" path="res://scenes/world/coin.tscn" id="1_4ludf"]
+[ext_resource type="PackedScene" uid="uid://rrl88yijv7ug" path="res://scenes/player/walljump.tscn" id="2_me031"]
+[ext_resource type="FontFile" uid="uid://b40vly4eur7vn" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_4pu7h"]
+[ext_resource type="Texture2D" uid="uid://crc2e85ip18d2" path="res://assets/sprites/coin.png" id="4_tbt0q"]
+[ext_resource type="PackedScene" uid="uid://bh3gvaa7gbmmr" path="res://scenes/player/infijump.tscn" id="5_np6ob"]
+[ext_resource type="PackedScene" uid="uid://t5l2xkbj1i8g" path="res://scenes/player/powerjump.tscn" id="6_6xdmy"]
+[ext_resource type="Texture2D" uid="uid://dytdts1r6lukd" path="res://assets/sprites/fruit.png" id="7_me031"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ae1on"]
+font = ExtResource("3_4pu7h")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fb4rb"]
+texture = ExtResource("4_tbt0q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8i7tl"]
+sources/0 = SubResource("TileSetAtlasSource_fb4rb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_isd83"]
+font = ExtResource("3_4pu7h")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4pu7h"]
+radius = 3.1622777
+
+[node name="items" type="Node2D" unique_id=885009974]
+z_index = 1
+
+[node name="walljump" parent="." unique_id=604301907 instance=ExtResource("2_me031")]
+position = Vector2(-492, -934)
+
+[node name="PointLabel" type="Label" parent="walljump" unique_id=562915077]
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 3.0
+scale = Vector2(0.5, 0.5)
+text = "x10"
+label_settings = SubResource("LabelSettings_ae1on")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="walljump" unique_id=556300112]
+position = Vector2(128, 56)
+tile_map_data = PackedByteArray(0, 0, 247, 255, 251, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8i7tl")
+
+[node name="infijump" parent="." unique_id=158713087 instance=ExtResource("5_np6ob")]
+position = Vector2(319, -2358)
+
+[node name="PointLabel" type="Label" parent="infijump" unique_id=770571779]
+offset_left = 4.0
+offset_top = -17.0
+offset_right = 45.0
+offset_bottom = 6.0
+scale = Vector2(0.5, 0.5)
+text = "x5"
+label_settings = SubResource("LabelSettings_ae1on")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="infijump" unique_id=1950120308]
+position = Vector2(133, 59)
+tile_map_data = PackedByteArray(0, 0, 247, 255, 251, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8i7tl")
+
+[node name="powerjump" parent="." unique_id=223579529 instance=ExtResource("6_6xdmy")]
+position = Vector2(-277, -173)
+
+[node name="PointLabel" type="Label" parent="powerjump" unique_id=222918217]
+offset_left = 3.0
+offset_top = -19.0
+offset_right = 44.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+text = "x5"
+label_settings = SubResource("LabelSettings_isd83")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="powerjump" unique_id=727850785]
+position = Vector2(133, 57)
+tile_map_data = PackedByteArray(0, 0, 247, 255, 251, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8i7tl")
+
+[node name="coins" type="Node" parent="." unique_id=511430479]
+
+[node name="coin9" parent="coins" unique_id=573293221 instance=ExtResource("1_4ludf")]
+position = Vector2(273, -510)
+
+[node name="coin8" parent="coins" unique_id=1694972044 instance=ExtResource("1_4ludf")]
+position = Vector2(262, -510)
+
+[node name="coin7" parent="coins" unique_id=222594063 instance=ExtResource("1_4ludf")]
+position = Vector2(251, -510)
+
+[node name="coin2" parent="coins" unique_id=1218483807 instance=ExtResource("1_4ludf")]
+position = Vector2(33, -41)
+
+[node name="coin" parent="coins" unique_id=284536657 instance=ExtResource("1_4ludf")]
+position = Vector2(62, 84)
+
+[node name="coin3" parent="coins" unique_id=1009436485 instance=ExtResource("1_4ludf")]
+position = Vector2(-334, 69)
+
+[node name="coin4" parent="coins" unique_id=1112696314 instance=ExtResource("1_4ludf")]
+position = Vector2(-193, -44)
+
+[node name="coin6" parent="coins" unique_id=458498860 instance=ExtResource("1_4ludf")]
+position = Vector2(286, 20)
+
+[node name="apple" type="RigidBody2D" parent="." unique_id=166009734]
+z_index = 1
+position = Vector2(-230, 83)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="apple" unique_id=1002632863]
+position = Vector2(-7, 4)
+scale = Vector2(0.7, 0.65384614)
+texture = ExtResource("7_me031")
+region_enabled = true
+region_rect = Rect2(3, 50, 10, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apple" unique_id=132084523]
+position = Vector2(-7, 5)
+shape = SubResource("CircleShape2D_4pu7h")

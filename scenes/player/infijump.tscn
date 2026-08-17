@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bh3gvaa7gbmmr"]
 
-[ext_resource type="Script" uid="uid://d1cv4t8c8i1eg" path="res://scripts/infijump.gd" id="1_vnr57"]
+[ext_resource type="Script" uid="uid://d1cv4t8c8i1eg" path="res://scripts/player/infijump.gd" id="1_vnr57"]
 [ext_resource type="Texture2D" uid="uid://dytdts1r6lukd" path="res://assets/sprites/fruit.png" id="2_4rr58"]
 [ext_resource type="AudioStream" uid="uid://d203bedwnw86n" path="res://assets/sounds/power_up.wav" id="3_psujt"]
 
