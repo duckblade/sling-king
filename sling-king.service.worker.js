@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1785705408|30817974422';
+const CACHE_VERSION = '1786997945|2781167540';
 /** @type {string} */
 const CACHE_PREFIX = 'sling-king-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
