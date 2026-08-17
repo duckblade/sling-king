@@ -25,6 +25,7 @@ GameManager="*uid://dn6oqo080xt0v"
 DialogueManager="*uid://c3rodes2l3gxb"
 MusicManager="*uid://ck1ndr6f6dq8x"
 SaveManager="*uid://dln5npnkj3ccd"
+WaterParticles="*uid://df1ww4wi72nia"
 
 [dialogue_manager]
 

@@ -128,8 +128,8 @@ sources/0 = SubResource("TileSetAtlasSource_264po")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30bd8"]
 
 [sub_resource type="Gradient" id="Gradient_wljb1"]
-offsets = PackedFloat32Array(0, 0.0073260074, 0.13919415, 0.5750916, 1)
-colors = PackedColorArray(0.8352941, 0.7882353, 0.65882355, 1, 0.50980395, 0.7137255, 0.8352941, 1, 0.078431375, 0.59607846, 0.8627451, 1, 0.23137255, 0.43529412, 0.627451, 1, 0.09411765, 0.15686275, 0.28235295, 1)
+offsets = PackedFloat32Array(0, 0.0036630037, 0.25641027, 0.6739927, 1)
+colors = PackedColorArray(0.16135934, 0.6590682, 0.7623533, 1, 0, 0.76862746, 0.9882353, 1, 0.078431375, 0.59607846, 0.8627451, 1, 0.23137255, 0.43529412, 0.627451, 1, 0.09411765, 0.15686275, 0.28235295, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dpbw8"]
 gradient = SubResource("Gradient_wljb1")
@@ -1427,6 +1427,7 @@ tile_map_data = PackedByteArray("AAD1/wgAAAAAAAwAAAD2/wgAAAAAAAwAAAD3/wgAAAAAAAw
 tile_set = SubResource("TileSet_dk438")
 
 [node name="ColorRect" type="TextureRect" parent="effects" unique_id=1887579404]
+z_index = -1
 material = SubResource("ShaderMaterial_30bd8")
 offset_left = -908.0
 offset_top = 124.37859
